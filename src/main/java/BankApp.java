@@ -3,9 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import main.java.Bank;
-
-public class BankApp {
+public class BankApp{
 
     public static void main(String[] args) {
         addLoop();
@@ -55,7 +53,7 @@ public class BankApp {
             }
         }
     }
-    public static Bank loadBankAccounts() {
+    public static Object loadBankAccounts() {
         Bank bank = new Bank(5);
         bank.addAccount("123456789", "pw789", new BigDecimal("5000.00"));
         bank.addAccount("123456788", "pw788", new BigDecimal("50000.00"));
