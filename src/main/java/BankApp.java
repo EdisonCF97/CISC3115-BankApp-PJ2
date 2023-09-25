@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class BankApp {
 
     public static void main(String[] args) {
-        accountNumber();
+        addLoop();
     }
 
-        public static void displayMenu(){
-            System.out.println("1. Check balance");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Deposit");
-            System.out.println("0. Exit");
-        }
+    public static void displayMenu(){
+        System.out.println("1. Check balance");
+        System.out.println("2. Withdraw");
+        System.out.println("3. Deposit");
+        System.out.println("0. Exit");
+    }
 
-        public static void accountNumber(){
-            Scanner scanner = new Scanner(System.in);
-            int option;
-            BankAccount account = new BankAccount("6637862074333514921", 5000.00);
-        
+    public static void addLoop(){
+        Scanner scanner = new Scanner(System.in);
+        int option;
+        BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+
         while (true) {
             displayMenu();
             System.out.print("Enter Option: ");
@@ -76,8 +76,4 @@ class BankAccount {
         balance += amount;
     }
 }
-
-
-
-    
 
