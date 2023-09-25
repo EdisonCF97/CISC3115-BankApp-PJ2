@@ -10,7 +10,7 @@ public class Bank {
 
     public Bank(int maxAccounts) {
         this.maxAccounts = maxAccounts;
-        this.checkingAccount = new CheckingAccount[maxAccounts];
+        this.checkingAccounts = new CheckingAccount[maxAccounts];
         this.nextAccountNumber = 1;
     }
 
