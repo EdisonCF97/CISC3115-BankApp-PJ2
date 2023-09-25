@@ -1,46 +1,33 @@
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Bank {
-
-    public static void main(String[] args){
-        
-    }
     private int maxAccounts;
-    private int numAccounts;
-    private CheckingAccount[] checkingAccounts;
+    private List<CheckingAccount> accounts;
+    private long nextAccountNumber;
 
-    public Bank (int maxAccounts){
+    public Bank(int maxAccounts) {
         this.maxAccounts = maxAccounts;
-        this.numAccounts = 0;
-        this.checkingAccounts = new CheckingAccount[maxAccounts];
+        this.accounts = new ArrayList<>();
+        this.nextAccountNumber = 1;
     }
 
-    public boolean addAccount(String ssn, String pw, BigDecimal balance){
-        if (numAccounts < maxAccounts) {
-            checkingAccounts[maxAccounts] = new CheckingAccount(ssn, pw, maxAccounts, balance);
-            numAccounts++;
-            return true;
-        } 
-        return false;
-    }
-
-    public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw){
-        for (CheckingAccount account : checkingAccounts) {
-            if (account != null && account.matchAccount(ssn, pw)){
-                return account;
-            }
+    public boolean addAccount(String ssn, String pw, BigDecimal balance) {
+        if (accounts.size() >= maxAccounts) {
+            System.out.println("Bank is at maximum capacity. Cannot add more accounts.");
+            return false;
         }
-        return null;
-    }
 
-    public boolean hasAccountFor(String ssn){
-        for (CheckingAccount account : checkingAccounts) {
-            if (account != null && account.belongsTo(ssn)) {
-                return true;
-            }
-        }
-        return false;
-    }
+        String pwHash = PasswordUtils.hashPassword(pw);
 
+        long accountNumber = nextAccountNumber++;
+
+        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
+
+        accounts.add(newAccount);
+
+        return true;
+    }
 }
+
 
