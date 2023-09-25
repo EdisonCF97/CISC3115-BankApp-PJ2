@@ -19,7 +19,7 @@ public class BankApp {
         BankAccount account = new BankAccount("6637862074333514921", 5000.00);
 
         while (true) {
-            displayMenu();
+            displayMenu(account);
             System.out.print("Enter Option: ");
             option = scanner.nextInt();
 
