@@ -6,7 +6,7 @@ public class BankApp {
         addLoop();
     }
 
-    public static void displayMenu(BankApp account){
+    public static void displayMenu(BankAccount account){
         System.out.println("1. Check balance");
         System.out.println("2. Withdraw");
         System.out.println("3. Deposit");
@@ -14,38 +14,39 @@ public class BankApp {
     }
 
     public static void addLoop(){
-        Scanner scanner = new Scanner(System.in);
-        int option;
-        BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int option;
+            BankAccount account = new BankAccount("6637862074333514921", 5000.00);
 
-        while (true) {
-            displayMenu(account);
-            System.out.print("Enter Option: ");
-            option = scanner.nextInt();
+            while (true) {
+                displayMenu(account);
+                System.out.print("Enter Option: ");
+                option = scanner.nextInt();
 
-            switch (option) {
-                case 1:
-                    System.out.println("The balance is $" + account.getBalance());
-                    break;
-                case 2:
-                    System.out.print("Enter dollar amount to withdraw: $");
-                    double withdrawAmount = scanner.nextDouble();
-                    if (account.withdraw(withdrawAmount)) {
-                        System.out.println("Withdraw success.");
-                    } else {
-                        System.out.println("Insufficient funds.");
-                    }
-                    break;
-                case 3:
-                    System.out.print("Enter dollar amount to deposit: $");
-                    double depositAmount = scanner.nextDouble();
-                    account.deposit(depositAmount);
-                    System.out.println("Deposit success.");
-                    break;
-                case 0:
-                    System.exit(0);
-                default:
-                    System.out.println("Invalid option. Please try again.");
+                switch (option) {
+                    case 1:
+                        System.out.println("The balance is $" + account.getBalance());
+                        break;
+                    case 2:
+                        System.out.print("Enter dollar amount to withdraw: $");
+                        double withdrawAmount = scanner.nextDouble();
+                        if (account.withdraw(withdrawAmount)) {
+                            System.out.println("Withdraw success.");
+                        } else {
+                            System.out.println("Insufficient funds.");
+                        }
+                        break;
+                    case 3:
+                        System.out.print("Enter dollar amount to deposit: $");
+                        double depositAmount = scanner.nextDouble();
+                        account.deposit(depositAmount);
+                        System.out.println("Deposit success.");
+                        break;
+                    case 0:
+                        System.exit(0);
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                }
             }
         }
     }
