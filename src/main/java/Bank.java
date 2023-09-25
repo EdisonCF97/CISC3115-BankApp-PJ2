@@ -12,7 +12,7 @@ public class Bank {
         this.nextAccountNumber = 1;
     }
 
-    public boolean addAccount(String ssn, String pw) {
+    public boolean addAccount(String ssn, String pw, long accountNo, BigDecimal balance) {
         if (accounts.size() >= maxAccounts) {
             System.out.println("Bank is at maximum capacity. Cannot add more accounts.");
             return false;
@@ -22,7 +22,7 @@ public class Bank {
 
         long accountNumber = nextAccountNumber++;
 
-        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber);
+        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, accountNo, balance);
 
         accounts.add(newAccount);
 
