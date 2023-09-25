@@ -1,32 +1,51 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.CRC32;
 
 public class Bank {
     private int maxAccounts;
-    private List<CheckingAccount> accounts;
+    private CheckingAccount[] checkingAccounts;
     private long nextAccountNumber;
 
     public Bank(int maxAccounts) {
         this.maxAccounts = maxAccounts;
-        this.accounts = new ArrayList<>();
+        this.checkingAccount = new CheckingAccount[maxAccounts];
         this.nextAccountNumber = 1;
     }
 
     public boolean addAccount(String ssn, String pw, BigDecimal balance) {
-        if (accounts.size() >= maxAccounts) {
+        if (nextAccountNumber >= maxAccounts) {
             System.out.println("Bank is at maximum capacity. Cannot add more accounts.");
             return false;
         }
 
-        String pwHash = CheckingAccount.hashPassword(pw);
+        String pwHash = PasswordUtils.hashPassword(pw);
 
         long accountNumber = nextAccountNumber++;
 
         CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
 
-        accounts.add(newAccount);
+        checkingAccounts[(int)accountNumber-1] = newAccount;
 
         return true;
+    }
+
+    public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw){
+        for(CheckingAccount account : checkingAccounts){
+            if(account != null && account.matchAccount(ssn, pw)){
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public boolean hasAccountFor(String ssn){
+        for(CheckingAccount account : checkingAccounts){
+            if(account != null && account.belongsTo(ssn)){
+                return true;
+            }
+        }
+        return false;
     }
 }
