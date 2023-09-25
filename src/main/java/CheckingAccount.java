@@ -57,3 +57,8 @@ public class CheckingAccount {
   }
 }
 
+class PasswordUtils{
+  public static String hashPassword(String password){
+    return password;
+  }
+}
