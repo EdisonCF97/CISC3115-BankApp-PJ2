@@ -34,7 +34,6 @@ public class CheckingAccount {
     this.accountNo = account.accountNo;
     this.balance = account.balance;
 
-  CheckingAccount copy  = new CheckingAccount(account);
   }
 
   public boolean deposit(BigDecimal amount){
