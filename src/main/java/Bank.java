@@ -26,7 +26,7 @@ public class Bank {
 
     public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw){
         for (CheckingAccount account : checkingAccounts) {
-            if (account != null && account.matchAccount(ssn, pw)) {
+            if (account != null && account.matchAccount(ssn, pw)){
                 return account;
             }
         }
