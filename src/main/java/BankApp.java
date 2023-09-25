@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class BankApp {
 
     public static void main(String[] args) {
-        addLoop();
+        accountNumber();
     }
 
         public static void displayMenu(){
@@ -13,7 +13,7 @@ public class BankApp {
             System.out.println("0. Exit");
         }
 
-        public static void addLoop(){
+        public static void accountNumber(){
             Scanner scanner = new Scanner(System.in);
             int option;
             BankAccount account = new BankAccount("6637862074333514921", 5000.00);
