@@ -6,7 +6,7 @@ public class BankApp {
         addLoop();
     }
 
-    public static void displayMenu(){
+    public static void displayMenu(BankAccount account){
         System.out.println("1. Check balance");
         System.out.println("2. Withdraw");
         System.out.println("3. Deposit");
