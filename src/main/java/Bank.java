@@ -22,7 +22,7 @@ public class Bank {
 
         long accountNumber = nextAccountNumber++;
 
-        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
+        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber);
 
         accounts.add(newAccount);
 
