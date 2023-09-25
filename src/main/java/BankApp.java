@@ -4,12 +4,22 @@ import java.util.Scanner;
 public class BankApp {
     
     public static void main(String[] args){
+        addLoop();
+    }
+        public static void displayMenu(){
+            System.out.println("1. Check balance");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Deposit");
+            System.out.println("0. Exit");
+            System.out.print("Enter Option: ");
+        }
+
+        public static void addLoop(){
         Bank bank = loadBankAccounts();
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter SSN: ");
+        System.out.printf("Enter SSN: ");
         String ssn = sc.nextLine();
-        System.out.print("Enter password: ");
+        System.out.printf("Enter password: ");
         String password = sc.nextLine();  
             
         CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, password);
@@ -66,14 +76,8 @@ public class BankApp {
         return bank;
         }
 
-        public static void displayMenu(){
-            System.out.println("1. Check balance");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Deposit");
-            System.out.println("0. Exit");
-            System.out.print("Enter Option: ");
-        }
     }
+
 
     
 
