@@ -1,6 +1,9 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import main.java.Bank;
 
 public class BankApp {
 
@@ -52,34 +55,15 @@ public class BankApp {
             }
         }
     }
-    
     public static Bank loadBankAccounts() {
-        List<BankAccount> accounts = new ArrayList<>();
-        accounts.add(new BankAccount("6637862074333514921", 5000.00));
-        accounts.add(new BankAccount("1234567890123456789", 10000.00));
-
-        Bank bank = new Bank();
-        bank.setAccounts(accounts);
-
+        Bank bank = new Bank(5);
+        bank.addAccount("123456789", "pw789", new BigDecimal("5000.00"));
+        bank.addAccount("123456788", "pw788", new BigDecimal("50000.00"));
+        bank.addAccount("123456787", "pw787", new BigDecimal("10000.00"));
+        bank.addAccount("123456786", "pw786", new BigDecimal("20000.00"));
+        bank.addAccount("123456785", "pw785", new BigDecimal("30000.00"));
         return bank;
-    }
-}
-
-class Bank {
-    private List<BankAccount> accounts;
-
-    public void setAccounts(List<BankAccount> accounts) {
-        this.accounts = accounts;
-    }
-
-    public BankAccount getBankAccount(String accountNumber) {
-        for (BankAccount account : accounts) {
-            if (account.getAccountNumber().equals(accountNumber)) {
-                return account;
-            }
         }
-        return null;
-    }
 }
 
 class BankAccount {
