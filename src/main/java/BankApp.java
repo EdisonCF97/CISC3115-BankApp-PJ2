@@ -3,16 +3,25 @@ import java.util.Scanner;
 public class BankApp {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+        addLoop();
+    }
 
-        while (true) {
+        public static void displayMenu(){
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
             System.out.println("0. Exit");
+        }
+
+        public static void addLoop(){
+            Scanner scanner = new Scanner(System.in);
+            int option;
+            BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+        
+        while (true) {
+            displayMenu();
             System.out.print("Enter Option: ");
-            int option = scanner.nextInt();
+            option = scanner.nextInt();
 
             switch (option) {
                 case 1:
