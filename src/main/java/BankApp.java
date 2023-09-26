@@ -18,7 +18,7 @@ public class BankApp {
         }
     }
 
-    public static void displayMenu(BankAccount account, Scanner scanner) {
+    public static void displayMenu(CheckingAccount account, Scanner scanner) {
         int option;
         
         while (true) {
