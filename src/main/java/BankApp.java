@@ -22,7 +22,7 @@ public class BankApp {
         int option;
         
         while (true) {
-            System.out.println("Account No. " + account.getAccountNumber());
+            System.out.println("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
