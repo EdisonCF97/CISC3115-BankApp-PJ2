@@ -3,6 +3,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import main.java.Bank;
+
 public class BankApp {
 
     public static void main(String[] args) {
@@ -36,7 +38,8 @@ public class BankApp {
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
                     double withdrawAmount = scanner.nextDouble();
-                    if (account.withdraw(withdrawAmount)) {
+                    BigDecimal withdrawAmountBD = BigDecimal.valueOf(withdrawAmount);
+                    if (account.withdraw(withdrawAmountBD)) {
                         System.out.println("Withdraw success.");
                     } else {
                         System.out.println("Insufficient funds.");
