@@ -45,7 +45,7 @@ public class BankApp {
                     break;
                 case 3:
                     System.out.print("Enter dollar amount to deposit: $");
-                    double depositAmount = scanner.nextDouble();
+                    BigDecimal depositAmount = scanner.nextBigDecimal();
                     account.deposit(depositAmount);
                     System.out.println("Deposit success.");
                     break;
