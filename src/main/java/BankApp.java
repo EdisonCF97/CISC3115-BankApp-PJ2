@@ -1,6 +1,9 @@
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
+
+import main.java.Bank;
 
 public class BankApp {
 
@@ -54,6 +57,16 @@ public class BankApp {
             }
         }
     }
+
+        public static Bank loadBankAccounts() {
+            Bank bank = new Bank(5);
+            bank.addAccount("123456789", "pw789", BigDecimal.valueOf(5000.00));
+            bank.addAccount("123456788", "pw788", BigDecimal.valueOf(5000.00));
+            bank.addAccount("123456787", "pw787", BigDecimal.valueOf(5000.00));
+            bank.addAccount("123456786", "pw786", BigDecimal.valueOf(5000.00));
+            bank.addAccount("123456785", "pw785", BigDecimal.valueOf(5000.00));
+            return bank;
+        }
 
     public static boolean authenticate(String ssn, String pw) {
         return true; 
