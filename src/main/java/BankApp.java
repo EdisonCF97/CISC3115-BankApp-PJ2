@@ -3,8 +3,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
-import main.java.Bank;
-
 public class BankApp {
 
     public static void main(String[] args) {
@@ -86,7 +84,7 @@ class BankAccount {
         this.balance = balance;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
