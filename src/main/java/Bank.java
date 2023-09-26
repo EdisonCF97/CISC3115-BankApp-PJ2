@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class Bank {
     private int maxAccounts;
     private int numAccounts;
