@@ -79,7 +79,7 @@ class BankAccount {
         return Long.toString(accountNumber);
     }
 
-    public BankAccount(String accountNumber, double balance) {
+    public BankAccount(String accountNumber, BigDecimal balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
