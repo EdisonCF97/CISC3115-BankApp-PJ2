@@ -19,15 +19,15 @@ public class CheckingAccount {
     this.balance= balance;
   }
 
-  public CheckingAccount(CheckingAccount originalAccount) {
-    this.ssn = originalAccount.ssn;
-    this.pwHash = originalAccount.pwHash;
-    this.accountNo = originalAccount.accountNo;
-    this.balance = originalAccount.balance;
+  public CheckingAccount(CheckingAccount newAccount) {
+    this.ssn = newAccount.ssn;
+    this.pwHash = newAccount.pwHash;
+    this.accountNo = newAccount.accountNo;
+    this.balance = newAccount.balance;
 }
 
-CheckingAccount originalAccount = new CheckingAccount(ssn, pwHash, accountNo, balance);
-CheckingAccount copy = new CheckingAccount(originalAccount);
+CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNo, balance);
+CheckingAccount copy = new CheckingAccount(newAccount);
 
   public boolean withdraw(BigDecimal amount){
     if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
