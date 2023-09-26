@@ -13,7 +13,7 @@ public class BankApp {
             System.out.print("Enter password: ");
             String pw = scanner.nextLine();
             BankAccount account = new BankAccount("6637862074333514921", 5000.00);
-            displayMenu(account, scanner);
+            BankApp.displayMenu(account, scanner);
 
         }
     }
