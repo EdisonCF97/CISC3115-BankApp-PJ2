@@ -18,7 +18,17 @@ public class CheckingAccount {
     this.accountNo = accountNo;
     this.balance= balance;
   }
-  
+
+  public CheckingAccount(CheckingAccount originalAccount) {
+    this.ssn = originalAccount.ssn;
+    this.pwHash = originalAccount.pwHash;
+    this.accountNo = originalAccount.accountNo;
+    this.balance = originalAccount.balance;
+}
+
+CheckingAccount originalAccount = new CheckingAccount(ssn, pwHash, accountNo, balance);
+CheckingAccount copy = new CheckingAccount(originalAccount);
+
   public boolean withdraw(BigDecimal amount){
     if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
         balance = balance.subtract(amount);
