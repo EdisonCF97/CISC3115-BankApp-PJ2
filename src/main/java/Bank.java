@@ -1,9 +1,7 @@
-import java.math.BigDecimal;
-
 public class Bank {
     private int maxAccounts;
     private int numAccounts;
-    private checkingAccount[] checkingAccounts;
+    private CheckingAccount[] checkingAccounts;
 
     public Bank(int maxAccounts) {
         this.maxAccounts = maxAccounts;
@@ -19,7 +17,7 @@ public class Bank {
 
         long accountNumber = numAccounts + 1;
 
-        CheckingAccount newAccount = new checkingAccounts(ssn, pwHash, accountNumber, balance);
+        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
 
         checkingAccounts[numAccounts] = newAccount;
         numAccounts++;
