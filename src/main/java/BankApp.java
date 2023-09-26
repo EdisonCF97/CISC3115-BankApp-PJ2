@@ -12,7 +12,7 @@ public class BankApp {
             String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
             String pw = scanner.nextLine();
-            BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+            CheckingAccount account = new CheckingAccount("6637862074333514921", 5000.00);
             BankApp.displayMenu(account, scanner);
 
         }
@@ -71,7 +71,7 @@ public class BankApp {
     }
 }
 
-class BankAccount {
+public class BankAccount {
     private String accountNumber;
     private double balance;
 
