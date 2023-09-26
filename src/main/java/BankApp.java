@@ -6,21 +6,15 @@ import java.util.Scanner;
 public class BankApp {
 
     public static void main(String[] args) {
+
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter SSN: ");
-            String ssn1 = scanner.nextLine();
-    
+            String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
-            String pw1 = scanner.nextLine();
-    
-            BankAccount account1 = new BankAccount("6637862074333514921", 5000.00);
-    
-            if (authenticate(ssn1, pw1)) {
-                System.out.println("Account No. " + account1.getAccountNumber());
-                displayMenu(account1, scanner);
-            } else {
-                System.out.println("Authentication failed. Exiting...");
-            }
+            String pw = scanner.nextLine();
+            BankAccount account = new BankAccount("6637862074333514921", 5000.00);
+            displayMenu(account, scanner);
+
         }
     }
 
@@ -28,6 +22,7 @@ public class BankApp {
         int option;
         
         while (true) {
+            System.out.println("Account No. " + account.getAccountNumber());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
