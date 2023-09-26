@@ -15,7 +15,7 @@ public class BankApp {
             String pw = scanner.nextLine();
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
-            BankApp.displayMenu(account, scanner);
+            BankApp.displayMenu(account);
         }
     }
 
