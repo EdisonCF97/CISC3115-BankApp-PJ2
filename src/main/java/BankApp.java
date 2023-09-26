@@ -73,7 +73,7 @@ public class BankApp {
 
 class BankAccount {
     private String accountNumber;
-    private double balance;
+    private BigDecimal balance;
 
     public String getAccountNumber() {
         return Long.toString(accountNumber);
