@@ -26,9 +26,6 @@ public class CheckingAccount {
     this.balance = newAccount.balance;
 }
 
-CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNo, balance);
-CheckingAccount copy = new CheckingAccount(newAccount);
-
   public boolean withdraw(BigDecimal amount){
     if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
         balance = balance.subtract(amount);
