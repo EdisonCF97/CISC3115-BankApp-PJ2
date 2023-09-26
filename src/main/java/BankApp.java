@@ -77,7 +77,7 @@ class BankAccount {
     private double balance;
 
     public String getAccountNumber() {
-    return accountNumber;
+        return Long.toString(accountNumber);
     }
 
     public BankAccount(String accountNumber, double balance) {
