@@ -69,6 +69,8 @@ public class BankApp {
     public static boolean authenticate(String ssn, String pw) {
         return true; 
     }
+
+class BankAccount {
     private String accountNumber;
     private double balance;
 
@@ -76,7 +78,7 @@ public class BankApp {
     return accountNumber;
     }
 
-    public CheckingAccount(String accountNumber, double balance) {
+    public BankAccount(String accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
@@ -97,3 +99,6 @@ public class BankApp {
         balance += amount;
     }
 }
+}
+
+
