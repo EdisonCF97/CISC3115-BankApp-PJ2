@@ -5,9 +5,8 @@ import java.util.Locale;
 public class CheckingAccount {
 
   public static void main(String[] args){
-
-  }
     
+  }
   private String ssn;
   private String pwHash;
   private long accountNo;
@@ -26,14 +25,6 @@ public class CheckingAccount {
         return true;
     }
     return false;
-  }
-
-  public CheckingAccount(CheckingAccount account) {
-    this.ssn = account.ssn;
-    this.pwHash = account.pwHash;
-    this.accountNo = account.accountNo;
-    this.balance = account.balance;
-
   }
 
   public boolean deposit(BigDecimal amount){
@@ -63,11 +54,5 @@ public class CheckingAccount {
 
   public String getBalanceAsString(){
     return NumberFormat.getCurrencyInstance(Locale.US).format(balance);
-  }
-}
-
-class PasswordUtils{
-  public static String hashPassword(String password){
-    return password;
   }
 }

@@ -1,48 +1,44 @@
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.CRC32;
 
 public class Bank {
     private int maxAccounts;
-    private CheckingAccount[] checkingAccounts;
-    private long nextAccountNumber;
+    private int numAccounts;
+    private checkingAccount[] checkingAccounts;
 
     public Bank(int maxAccounts) {
         this.maxAccounts = maxAccounts;
+        this.numAccounts = 0;
         this.checkingAccounts = new CheckingAccount[maxAccounts];
-        this.nextAccountNumber = 1;
     }
 
-    public boolean addAccount(String ssn, String pw, BigDecimal balance) {
-        if (nextAccountNumber >= maxAccounts) {
+    public boolean addAccount(String ssn, String pwHash, BigDecimal balance) {
+        if (numAccounts >= maxAccounts) {
             System.out.println("Bank is at maximum capacity. Cannot add more accounts.");
             return false;
         }
 
-        String pwHash = PasswordUtils.hashPassword(pw);
+        long accountNumber = numAccounts + 1;
 
-        long accountNumber = nextAccountNumber++;
+        CheckingAccount newAccount = new checkingAccounts(ssn, pwHash, accountNumber, balance);
 
-        CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
-
-        checkingAccounts[(int)accountNumber-1] = newAccount;
+        checkingAccounts[numAccounts] = newAccount;
+        numAccounts++;
 
         return true;
     }
 
-    public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw){
-        for(CheckingAccount account : checkingAccounts){
-            if(account != null && account.matchAccount(ssn, pw)){
-                return account;
+    public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw) {
+        for (int i = 0; i < numAccounts; i++) {
+            if (checkingAccounts[i].matchAccount(ssn, pw)) {
+                return checkingAccounts[i];
             }
         }
         return null;
     }
 
-    public boolean hasAccountFor(String ssn){
-        for(CheckingAccount account : checkingAccounts){
-            if(account != null && account.belongsTo(ssn)){
+    public boolean hasAccountFor(String ssn) {
+        for (int i = 0; i < numAccounts; i++) {
+            if (checkingAccounts[i].belongsTo(ssn)) {
                 return true;
             }
         }
