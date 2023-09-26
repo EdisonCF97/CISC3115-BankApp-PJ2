@@ -16,7 +16,7 @@ public class CheckingAccount {
     this.ssn = ssn;
     this.pwHash = pwHash;
     this.accountNo = accountNo;
-    this.balance= balance;
+    this.balance = balance;
   }
 
   public CheckingAccount(CheckingAccount newAccount) {
