@@ -4,10 +4,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 
+
 public class BankApp {
 
     public static void main(String[] args) {
-
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter SSN: ");
             String ssn = scanner.nextLine();
@@ -15,12 +15,11 @@ public class BankApp {
             String pw = scanner.nextLine();
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
+            BankApp.displayMenu(account, scanner);
         }
     }
 
     public static void displayMenu(CheckingAccount account, Scanner scanner) {
-        BankApp.displayMenu(account, scanner);
-
         int option;
         
         while (true) {
