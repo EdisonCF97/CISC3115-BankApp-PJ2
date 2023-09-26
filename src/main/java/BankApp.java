@@ -3,6 +3,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import main.java.Bank;
+
 public class BankApp {
 
     public static void main(String[] args) {
@@ -76,7 +78,7 @@ class BankAccount {
     private BigDecimal balance;
 
     public String getAccountNumber() {
-        return Long.toString(accountNumber);
+        return accountNumber;
     }
 
     public BankAccount(String accountNumber, BigDecimal balance) {
@@ -88,18 +90,18 @@ class BankAccount {
         return balance;
     }
 
-    public boolean withdraw(double amount) {
-        if (amount <= balance) {
-            balance -= amount;
+    public boolean withdraw(BigDecimal amount) {
+        if (amount.compareTo(balance) <= 0) {
+            balance = balance.subtract(amount);
             return true;
         }
         return false;
     }
 
-    public void deposit(double amount) {
-        balance += amount;
+    public void deposit(BigDecimal amount) {  
+        balance = balance.add(amount);
+        }
     }
-}
 }
 
 
