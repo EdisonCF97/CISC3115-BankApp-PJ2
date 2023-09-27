@@ -3,13 +3,10 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class BankApp {
+public class BankApp{
 
     public static void main(String[] args) {
-        addLoop();
-    }
-
-        /*try (Scanner scanner = new Scanner(System.in)) {
+    try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter SSN: ");
             String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
@@ -17,30 +14,21 @@ public class BankApp {
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
             BankApp.displayMenu(account);
-        }*/
-
-    /*public static void displayMenu(CheckingAccount account) {
-        Scanner scanner = new Scanner(System.in);
-        int option;*/
-        
-        public static void displayMenu(){
-            System.out.print("Enter SSN: ");
-            System.out.print("Enter password: ");
         }
-
-        public static void addLoop(){
-            Scanner scanner = new Scanner(System.in);
-            int option;
-            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
-
-        /*while (true) {
+    }
+    
+        public static void displayMenu(CheckingAccount account) {
+        Scanner scanner = new Scanner(System.in);
+        int option;
+        
+        while (true) {
             System.out.println("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
             System.out.println("0. Exit");
             System.out.print("Enter Option: ");
-            option = scanner.nextInt();*/
+            option = scanner.nextInt();
 
             while (true) {
                 displayMenu();
