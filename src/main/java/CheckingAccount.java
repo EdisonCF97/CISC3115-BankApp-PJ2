@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import main.java.PasswordUtils;
+
 public class CheckingAccount {
 
   public static void main(String[] args){
@@ -14,7 +16,7 @@ public class CheckingAccount {
 
   public CheckingAccount(String ssn, String pw, long accountNo, BigDecimal balance){
     this.ssn = ssn;
-    this.pw = pw;
+    this.pw = PasswordUtils.getPasswordHash(pw);
     this.accountNo = accountNo;
     this.balance = balance;
   }
@@ -43,7 +45,7 @@ public class CheckingAccount {
 }
 
   public boolean matchAccount(String ssn, String pw){
-        return this.ssn.equals(ssn) && this.pw.equals(pw);
+        return this.ssn.equals(ssn) && this.pw.equals(PasswordUtils.getPasswordHash(pw));
   }
 
   public long getAccountNo(){
