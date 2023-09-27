@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import main.java.PasswordUtils;
+
 
 public class CheckingAccount {
 
@@ -15,7 +17,7 @@ public class CheckingAccount {
 
   public CheckingAccount(String ssn, String pwHash, long accountNo, BigDecimal balance){
     this.ssn = ssn;
-    this.pwhash = pw;
+    this.pwhash = PasswordUtils.getPasswordHash(pw);
     this.accountNo = accountNo;
     this.balance = balance;
   }
