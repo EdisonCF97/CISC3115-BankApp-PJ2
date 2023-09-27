@@ -56,7 +56,7 @@ public class BankApp{
     
             switch (option) {
                 case 1:
-                System.out.println("The balance is %s\n " + account.getBalanceAsString());
+                System.out.println("The balance is %s\n ",account.getBalanceAsString());
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
