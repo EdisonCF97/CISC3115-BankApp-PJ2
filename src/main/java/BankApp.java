@@ -20,7 +20,9 @@ public class BankApp{
             System.out.print("Enter password: ");
             String pw = scanner.nextLine();
             int option;*/
+
             Bank bank = loadBankAccounts();
+
             try (Scanner scanner = new Scanner(System.in)) {
                 System.out.print("Enter SSN: ");
                 String ssn = scanner.nextLine();
@@ -29,21 +31,16 @@ public class BankApp{
                 /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
     */          CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
 
-                BankApp.displayMenu(account);
-            }
+                appLoop(account);
+    }
         }
     
-        public static void displayMenu(CheckingAccount account) {
+        public static void appLoop(CheckingAccount account) {
             Scanner scanner = new Scanner(System.in);
             int option;
         
         while (true) {
-            System.out.println("Account No. " + account.getAccountNo());
-            System.out.println("1. Check balance");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Deposit");
-            System.out.println("0. Exit");
-            System.out.print("Enter Option: ");
+            displayMenu(account);
             option = scanner.nextInt();
     
             switch (option) {
@@ -73,6 +70,15 @@ public class BankApp{
             }
         }
     }
+
+        public static void displayMenu(CheckingAccount account){
+            System.out.println("Account No. " + account.getAccountNo());
+            System.out.println("1. Check balance");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Deposit");
+            System.out.println("0. Exit");
+            System.out.print("Enter Option: ");
+        }
 
 
         public static Bank loadBankAccounts() {
