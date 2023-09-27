@@ -55,12 +55,9 @@ public class BankApp{
     
             switch (option) {
                 case 1:
-                if(option==1){
                 System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalance()));
                 break;
-                }
                 case 2:
-                if(option==2){
                     System.out.print("Enter dollar amount to withdraw: $");
                     double withdrawAmount = scanner.nextDouble();
                     BigDecimal withdrawAmountBD = BigDecimal.valueOf(withdrawAmount);
@@ -70,20 +67,15 @@ public class BankApp{
                         System.out.println("Insufficient funds.");
                     }
                     break;
-                }
                 case 3:
-                if(option==3){
                     System.out.print("Enter dollar amount to deposit: $");
                     BigDecimal depositAmount = scanner.nextBigDecimal();
                     account.deposit(depositAmount);
                     System.out.println("Deposit success.");
                     break;
-                }
                 case 0:
-                if(option==0){
-                    scanner.close();
                     System.exit(0);
-                }
+                    break;
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
