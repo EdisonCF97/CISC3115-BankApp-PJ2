@@ -35,7 +35,7 @@ public class CheckingAccount {
   }
 
   public boolean deposit(BigDecimal amount){
-    if (amount.compareTo(BigDecimal.ZERO) > 0) {
+    if (amount.compareTo(balance) > 0) {
       balance = balance.add(amount);
       return false;
   }
