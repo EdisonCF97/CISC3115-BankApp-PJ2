@@ -29,11 +29,12 @@ public class BankApp{
                 /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
     */          CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
 
-                BankApp.displayMenu(account, scanner);
+                BankApp.displayMenu(account);
             }
         }
     
-        public static void displayMenu(CheckingAccount account, Scanner scanner) {
+        public static void displayMenu(CheckingAccount account) {
+            Scanner scanner = new Scanner(System.in);
             int option;
         
         while (true) {
