@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class BankApp {
 
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
+        addLoop();
+    }
+
+        /*try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter SSN: ");
             String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
@@ -14,21 +17,37 @@ public class BankApp {
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
             BankApp.displayMenu(account);
-        }
-    }
+        }*/
 
-    public static void displayMenu(CheckingAccount account) {
+    /*public static void displayMenu(CheckingAccount account) {
         Scanner scanner = new Scanner(System.in);
-        int option;
+        int option;*/
         
-        while (true) {
+        public static void displayMenu(CheckingAccount account){
+            System.out.print("Enter SSN: ");
+            String ssn = scanner.nextLine();
+            System.out.print("Enter password: ");
+            String pw = scanner.nextLine();        
+        }
+
+        public static void addLoop(){
+            Scanner scanner = new Scanner(System.in);
+            int option;
+            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
+
+        /*while (true) {
             System.out.println("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
             System.out.println("0. Exit");
             System.out.print("Enter Option: ");
-            option = scanner.nextInt();
+            option = scanner.nextInt();*/
+
+            while (true) {
+                displayMenu();
+                System.out.print("Enter Option: ");
+                option = scanner.nextInt();
     
             switch (option) {
                 case 1:
@@ -67,9 +86,6 @@ public class BankApp {
             bank.addAccount("123456785", "pw785", BigDecimal.valueOf(5000.00));
             return bank;
         }
-        
- 
-
 }
 
 
