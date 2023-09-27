@@ -39,6 +39,7 @@ public class Bank {
                 return checkingAccounts[i];
             }
         }    
+        return numAccounts;
     }
 
     public boolean hasAccountFor(String ssn) {
