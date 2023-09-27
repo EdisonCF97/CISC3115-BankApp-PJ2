@@ -18,7 +18,11 @@ public class Bank {
             return false;
         }
         
+        if (checkingAccounts[i].belongsTo(ssn)) {
         return hasAccountFor(ssn);
+        
+        }
+    
             
         long accountNumber = numAccounts + 1;
 
