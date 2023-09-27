@@ -3,10 +3,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
-import main.java.Bank;
-
-
-
 public class BankApp {
 
     public static void main(String[] args) {
@@ -71,6 +67,8 @@ public class BankApp {
             bank.addAccount("123456785", "pw785", BigDecimal.valueOf(5000.00));
             return bank;
         }
+        
+ 
 
 }
 
