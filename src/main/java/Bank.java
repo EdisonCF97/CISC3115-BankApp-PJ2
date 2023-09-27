@@ -25,7 +25,7 @@ public class Bank {
             
         long accountNumber = numAccounts + 1;
 
-        CheckingAccount newAccount = new CheckingAccount(ssn, pw, accountNumber, balance);
+        CheckingAccount newAccount = new CheckingAccount(ssn, getPasswordHash(pw), accountNumber, balance);
 
         checkingAccounts[numAccounts] = newAccount;
         numAccounts++;
@@ -35,7 +35,7 @@ public class Bank {
 
     public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw) {
         for (int i = 0; i < numAccounts; i++) {
-            if (checkingAccounts[i].matchAccount(ssn, getPasswordHash(pw))) {
+            if (checkingAccounts[i].matchAccount(ssn, pw)) {
                 return checkingAccounts[i];
             }
         }
