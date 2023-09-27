@@ -8,20 +8,20 @@ public class CheckingAccount {
     
   }
   private String ssn;
-  private String pwHash;
+  private String pw;
   private long accountNo;
   private BigDecimal balance;
 
-  public CheckingAccount(String ssn, String pwHash, long accountNo, BigDecimal balance){
+  public CheckingAccount(String ssn, String pw, long accountNo, BigDecimal balance){
     this.ssn = ssn;
-    this.pwHash = pwHash;
+    this.pw = pw;
     this.accountNo = accountNo;
     this.balance = balance;
   }
 
   public CheckingAccount(CheckingAccount newAccount) {
     this.ssn = newAccount.ssn;
-    this.pwHash = newAccount.pwHash;
+    this.pw = newAccount.pw;
     this.accountNo = newAccount.accountNo;
     this.balance = newAccount.balance;
 }
@@ -42,8 +42,8 @@ public class CheckingAccount {
     return true; 
 }
 
-  public boolean matchAccount(String ssn, String pwHash){
-        return this.ssn.equals(ssn) && this.pwHash.equals(pwHash);
+  public boolean matchAccount(String ssn, String pw){
+        return this.ssn.equals(ssn) && this.pwHash.equals(pw);
   }
 
   public long getAccountNo(){
