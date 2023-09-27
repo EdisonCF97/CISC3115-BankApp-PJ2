@@ -26,21 +26,21 @@ public class CheckingAccount {
     this.balance = newAccount.balance;
 }
 
-  public boolean withdraw(BigDecimal amount) {
-    if (amount.compareTo(balance) > 0 && balance.compareTo(amount) >= 0){
+  public boolean withdraw(BigDecimal amount){
+    if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
       balance = balance.subtract(amount);
       return true;
     }
-    return false;
+      return false;
 }
 
   public boolean deposit(BigDecimal amount){
     if (amount.compareTo(balance) <= 0) {
       balance = balance.add(amount);
-      return false;
-  }
-        return true; 
-  }
+    return false;
+    }
+    return true; 
+}
 
   public boolean matchAccount(String ssn, String pwHash){
         return this.ssn.equals(ssn) && this.pwHash.equals(pwHash);
