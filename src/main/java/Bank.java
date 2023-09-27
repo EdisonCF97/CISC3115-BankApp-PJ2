@@ -18,11 +18,7 @@ public class Bank {
             return false;
         }
         
-        for (int i = 0; i < numAccounts; i++) {
-            if (checkingAccounts[i].belongsTo(ssn)) {
-                return true;
-            }
-        }
+        return hasAccountFor(ssn);
             
         long accountNumber = numAccounts + 1;
 
