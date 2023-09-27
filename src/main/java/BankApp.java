@@ -7,7 +7,7 @@ public class BankApp{
 
     public static void main(String[] args) {
            
-            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(0));
+            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
             
             BankApp.displayMenu(account);
             
