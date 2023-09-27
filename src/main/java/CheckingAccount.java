@@ -42,8 +42,8 @@ public class CheckingAccount {
     return true; 
 }
 
-  public boolean matchAccount(String ssn, String pw){
-        return this.ssn.equals(ssn) && this.pw.equals(pw);
+  public boolean matchAccount(String ssn, String pwHash){
+        return this.ssn.equals(ssn) && this.pw.equals(pwHash);
   }
 
   public long getAccountNo(){
