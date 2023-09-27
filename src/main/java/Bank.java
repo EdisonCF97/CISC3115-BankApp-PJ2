@@ -25,7 +25,7 @@ public class Bank {
             
         long accountNumber = numAccounts + 1;
 
-        CheckingAccount newAccount = new CheckingAccount(ssn, getPasswordHash(pw), accountNumber, balance);
+        CheckingAccount newAccount = new CheckingAccount(ssn, PasswordUtils.getPasswordHash(pw), accountNumber, balance);
 
         checkingAccounts[numAccounts] = newAccount;
         numAccounts++;
