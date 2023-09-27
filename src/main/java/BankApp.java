@@ -98,9 +98,6 @@ class BankAccount {
         return false;
     }
 
-    public void deposit(BigDecimal amount) {  
-        balance = balance.add(amount);
-        }
     }
 }
 
