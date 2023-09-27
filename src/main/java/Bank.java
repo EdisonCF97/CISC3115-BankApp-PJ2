@@ -36,10 +36,10 @@ public class Bank {
     public CheckingAccount getAuthorizedCheckingAccount(String ssn, String pw) {
         for (int i = 0; i < numAccounts; i++) {
             if (checkingAccounts[i].matchAccount(ssn, pw)) {
-                return checkingAccounts[i];
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     public boolean hasAccountFor(String ssn) {
