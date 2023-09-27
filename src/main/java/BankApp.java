@@ -15,11 +15,12 @@ public class BankApp {
             String pw = scanner.nextLine();
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
-            BankApp.displayMenu(account, scanner);
+            BankApp.displayMenu(account);
         }
     }
 
-    public static void displayMenu(CheckingAccount account,Scanner scanner) {
+    public static void displayMenu(CheckingAccount account) {
+        Scanner scanner = new Scanner(System.in);
         int option;
         
         while (true) {
@@ -30,11 +31,11 @@ public class BankApp {
             System.out.println("0. Exit");
             System.out.print("Enter Option: ");
             option = scanner.nextInt();
-            scanner.nextLine();
     
             switch (option) {
                 case 1:
-                System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalance()));                    break;
+                System.out.println("The balance is " );
+                break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
                     double withdrawAmount = scanner.nextDouble();
