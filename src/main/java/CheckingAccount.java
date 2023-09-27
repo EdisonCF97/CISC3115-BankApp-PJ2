@@ -26,13 +26,13 @@ public class CheckingAccount {
     this.balance = newAccount.balance;
 }
 
-  public boolean withdraw(BigDecimal amount){
-    if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
-        balance = balance.subtract(amount);
-        return true;
+  public boolean withdraw(BigDecimal amount) {
+    if (amount.compareTo(balance) <= 0) {
+      balance = balance.subtract(amount);
+      return true;
     }
     return false;
-  }
+}
 
   public boolean deposit(BigDecimal amount){
     if (amount.compareTo(balance) <= 0) {
