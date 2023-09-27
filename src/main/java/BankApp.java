@@ -25,9 +25,7 @@ public class BankApp {
         
         public static void displayMenu(CheckingAccount account){
             System.out.print("Enter SSN: ");
-            String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
-            String pw = scanner.nextLine();        
         }
 
         public static void addLoop(){
