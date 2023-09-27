@@ -7,7 +7,7 @@ public class BankApp{
 
     public static void main(String[] args) {
            
-            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
+            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(0));
             
             BankApp.displayMenu(account);
             
@@ -61,11 +61,11 @@ public class BankApp{
 
         public static Bank loadBankAccounts() {
             Bank bank = new Bank(5);
-            bank.addAccount("123456789", "pw789", BigDecimal.valueOf(5000.00));
-            bank.addAccount("123456788", "pw788", BigDecimal.valueOf(50000.00));
-            bank.addAccount("123456787", "pw787", BigDecimal.valueOf(10000.00));
-            bank.addAccount("123456786", "pw786", BigDecimal.valueOf(20000.00));
-            bank.addAccount("123456785", "pw785", BigDecimal.valueOf(30000.00));
+            bank.addAccount("123456789", "pw789", BigDecimal.valueOf(0));
+            bank.addAccount("123456788", "pw788", BigDecimal.valueOf(0));
+            bank.addAccount("123456787", "pw787", BigDecimal.valueOf(0));
+            bank.addAccount("123456786", "pw786", BigDecimal.valueOf(0.));
+            bank.addAccount("123456785", "pw785", BigDecimal.valueOf(0));
             return bank;
         }
 }
