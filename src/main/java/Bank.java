@@ -18,9 +18,8 @@ public class Bank {
             return false;
         }
         
-        if (hasAccountFor.belongsTo(ssn)) {
-            return hasAccountFor(ssn);
-        
+        if(hasAccountFor(ssn)) {
+            return false;
         }
     
             
