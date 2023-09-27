@@ -2,8 +2,6 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import main.java.PasswordUtils;
-
 public class CheckingAccount {
 
   public static void main(String[] args){
