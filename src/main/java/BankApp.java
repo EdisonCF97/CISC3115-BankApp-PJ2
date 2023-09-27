@@ -15,12 +15,11 @@ public class BankApp {
             String pw = scanner.nextLine();
             CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
 
-            BankApp.displayMenu(account);
+            BankApp.displayMenu(account, scanner);
         }
     }
 
-    public static void displayMenu(CheckingAccount account) {
-        Scanner scanner = new Scanner(System.in);
+    public static void displayMenu(CheckingAccount account,Scanner scanner) {
         int option;
         
         while (true) {
@@ -31,6 +30,7 @@ public class BankApp {
             System.out.println("0. Exit");
             System.out.print("Enter Option: ");
             option = scanner.nextInt();
+            scanner.nextLine();
     
             switch (option) {
                 case 1:
