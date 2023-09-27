@@ -30,11 +30,6 @@ public class BankApp{
             System.out.println("0. Exit");
             System.out.print("Enter Option: ");
             option = scanner.nextInt();
-
-            while (true) {
-                displayMenu();
-                System.out.print("Enter Option: ");
-                option = scanner.nextInt();
     
             switch (option) {
                 case 1:
@@ -63,7 +58,7 @@ public class BankApp{
             }
         }
     }
-    }
+
 
         public static Bank loadBankAccounts() {
             Bank bank = new Bank(5);
