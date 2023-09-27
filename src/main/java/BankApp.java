@@ -23,7 +23,7 @@ public class BankApp {
         Scanner scanner = new Scanner(System.in);
         int option;*/
         
-        public static void displayMenu(CheckingAccount account){
+        public static void displayMenu(){
             System.out.print("Enter SSN: ");
             System.out.print("Enter password: ");
         }
