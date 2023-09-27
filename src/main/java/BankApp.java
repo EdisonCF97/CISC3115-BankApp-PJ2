@@ -3,6 +3,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import main.java.Bank;
+
 
 
 public class BankApp {
@@ -34,7 +36,7 @@ public class BankApp {
     
             switch (option) {
                 case 1:
-                System.out.println("The balance is " );
+                System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalance()));
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
@@ -70,27 +72,7 @@ public class BankApp {
             return bank;
         }
 
-    public static boolean authenticate(String ssn, String pw) {
-        return true; 
-    }
-
-class BankAccount {
-    private String accountNumber;
-    private BigDecimal balance;
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public BankAccount(String accountNumber, BigDecimal balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
 }
-}
+
 
 
