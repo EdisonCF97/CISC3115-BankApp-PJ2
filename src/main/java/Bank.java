@@ -17,7 +17,13 @@ public class Bank {
             System.out.println("Bank is at maximum capacity. Cannot add more accounts.");
             return false;
         }
-
+        
+        for (int i = 0; i < numAccounts; i++) {
+            if (checkingAccounts[i].belongsTo(ssn)) {
+                return true;
+            }
+        }
+            
         long accountNumber = numAccounts + 1;
 
         CheckingAccount newAccount = new CheckingAccount(ssn, pwHash, accountNumber, balance);
