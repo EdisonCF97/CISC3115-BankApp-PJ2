@@ -56,11 +56,11 @@ public class BankApp{
     
             switch (option) {
                 case 1:
-                System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalanceAsString()));
+                System.out.println("The balance is %s\n " + account.getBalanceAsString());
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
-                    BigDecimal withdrawAmount = scanner.nextBigDecimal();
+                    Double withdrawAmount = scanner.nextDouble();
                     BigDecimal withdrawAmountBD = BigDecimal.valueOf(withdrawAmount);
                     if (account.withdraw(withdrawAmountBD)) {
                         System.out.println("Withdraw success.");
