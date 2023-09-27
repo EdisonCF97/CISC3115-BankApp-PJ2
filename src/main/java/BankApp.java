@@ -28,8 +28,9 @@ public class BankApp{
                 String ssn = scanner.nextLine();
                 System.out.print("Enter password: ");
                 String pw = scanner.nextLine();
-                CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
-    
+                /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
+    */          CheckingAccount account = CheckingAccount.getAuthorizedCheckingAccount(ssn, pw);
+
                 BankApp.displayMenu(account);
             }
         }
