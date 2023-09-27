@@ -19,12 +19,7 @@ public class CheckingAccount {
     this.balance = balance;
   }
 
-  public CheckingAccount(CheckingAccount newAccount) {
-    this.ssn = newAccount.ssn;
-    this.pw = newAccount.pw;
-    this.accountNo = newAccount.accountNo;
-    this.balance = newAccount.balance;
-}
+  
 
   public boolean withdraw(BigDecimal amount){
     if (amount.compareTo(BigDecimal.ZERO) > 0 && balance.compareTo(amount) >= 0) {
