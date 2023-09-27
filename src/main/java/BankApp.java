@@ -13,7 +13,6 @@ public class BankApp{
             
     }
     
-    
         public static void displayMenu(CheckingAccount account) {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter SSN: ");
@@ -63,10 +62,10 @@ public class BankApp{
         public static Bank loadBankAccounts() {
             Bank bank = new Bank(5);
             bank.addAccount("123456789", "pw789", BigDecimal.valueOf(5000.00));
-            bank.addAccount("123456788", "pw788", BigDecimal.valueOf(5000.00));
-            bank.addAccount("123456787", "pw787", BigDecimal.valueOf(5000.00));
-            bank.addAccount("123456786", "pw786", BigDecimal.valueOf(5000.00));
-            bank.addAccount("123456785", "pw785", BigDecimal.valueOf(5000.00));
+            bank.addAccount("123456788", "pw788", BigDecimal.valueOf(50000.00));
+            bank.addAccount("123456787", "pw787", BigDecimal.valueOf(10000.00));
+            bank.addAccount("123456786", "pw786", BigDecimal.valueOf(20000.00));
+            bank.addAccount("123456785", "pw785", BigDecimal.valueOf(30000.00));
             return bank;
         }
 }
