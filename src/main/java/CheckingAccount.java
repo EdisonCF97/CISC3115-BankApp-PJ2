@@ -12,9 +12,9 @@ public class CheckingAccount {
   private long accountNo;
   private BigDecimal balance;
 
-  public CheckingAccount(String ssn, String pw, long accountNo, BigDecimal balance){
+  public CheckingAccount(String ssn, String pwHash, long accountNo, BigDecimal balance){
     this.ssn = ssn;
-    this.pw = PasswordUtils.getPasswordHash(pw);
+    this.pw = pwHash;
     this.accountNo = accountNo;
     this.balance = balance;
   }
