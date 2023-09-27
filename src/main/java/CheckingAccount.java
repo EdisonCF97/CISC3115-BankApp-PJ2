@@ -36,11 +36,12 @@ public class CheckingAccount {
 }
 
   public boolean deposit(BigDecimal amount){
-    if (amount.compareTo(balance) <= 0) {
-      balance = balance.add(amount);
-    return false;
+    if (amount.deposti() <= 0) {
+      return false;
+    }else{
+          balance = balance.add(amount);
+          return true; 
     }
-    return true; 
 }
 
   public boolean matchAccount(String ssn, String pwHash){
