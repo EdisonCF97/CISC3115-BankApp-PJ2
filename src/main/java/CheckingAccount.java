@@ -14,7 +14,7 @@ public class CheckingAccount {
 
   public CheckingAccount(String ssn, String pwHash, long accountNo, BigDecimal balance){
     this.ssn = ssn;
-    this.pw = PasswordUtils.getPasswordHash(pwHash);
+    this.pwHash = pwHash;
     this.accountNo = accountNo;
     this.balance = balance;
   }
