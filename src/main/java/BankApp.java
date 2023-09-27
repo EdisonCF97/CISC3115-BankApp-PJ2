@@ -3,6 +3,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import main.java.Bank;
+
 public class BankApp{
 
     public static void main(String[] args) {
@@ -55,7 +57,7 @@ public class BankApp{
     
             switch (option) {
                 case 1:
-                System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalance()));
+                System.out.println("The balance is " + NumberFormat.getCurrencyInstance(Locale.US).format(account.getBalanceAsString()));
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
