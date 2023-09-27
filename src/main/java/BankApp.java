@@ -32,17 +32,15 @@ public class BankApp{
     */          CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
 
                 appLoop(account);
-    }
+            }
         }
 
-             
         public static void displayMenu(CheckingAccount account){
             System.out.println("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
             System.out.println("0. Exit");
-            System.out.print("Enter Option: ");
         }
         
         public static void appLoop(CheckingAccount account) {
@@ -52,6 +50,7 @@ public class BankApp{
         
         while (true) {
             displayMenu(account);
+            System.out.print("Enter Option: ");
             option = scanner.nextInt();
     
             switch (option) {
