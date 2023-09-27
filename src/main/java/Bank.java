@@ -18,8 +18,12 @@ public class Bank {
             return false;
         }
         
-        if (checkingAccounts[i].belongsTo(ssn)) {
-        return hasAccountFor(ssn);
+        if (hasAccountFor.belongsTo(ssn)) {
+            return true;
+
+        }else{
+            return false;
+        }
         
         }
     
