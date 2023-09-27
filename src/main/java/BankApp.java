@@ -3,14 +3,16 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import main.java.Bank;
+
 public class BankApp{
 
     public static void main(String[] args) {
            
-            CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
+            /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
             
             BankApp.displayMenu(account);
-            
+       
     }
     
         public static void displayMenu(CheckingAccount account) {
@@ -19,6 +21,21 @@ public class BankApp{
             String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
             String pw = scanner.nextLine();
+            int option;*/
+            
+            try (Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Enter SSN: ");
+                String ssn = scanner.nextLine();
+                System.out.print("Enter password: ");
+                String pw = scanner.nextLine();
+                CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
+    
+                BankApp.displayMenu(account);
+            }
+        }
+    
+        public static void displayMenu(CheckingAccount account) {
+            Scanner scanner = new Scanner(System.in);
             int option;
         
         while (true) {
