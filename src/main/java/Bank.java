@@ -38,8 +38,7 @@ public class Bank {
             if (checkingAccounts[i].matchAccount(ssn, pw)) {
                 return checkingAccounts[i];
             }
-        }
-        return null;
+        }    
     }
 
     public boolean hasAccountFor(String ssn) {
