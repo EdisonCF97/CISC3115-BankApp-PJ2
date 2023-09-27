@@ -60,7 +60,7 @@ public class BankApp{
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
-                    double withdrawAmount = scanner.nextDouble();
+                    BigDecimal withdrawAmount = scanner.nextBigDecimal();
                     BigDecimal withdrawAmountBD = BigDecimal.valueOf(withdrawAmount);
                     if (account.withdraw(withdrawAmountBD)) {
                         System.out.println("Withdraw success.");
