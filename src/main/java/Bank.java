@@ -39,7 +39,17 @@ public class Bank {
                 return checkingAccounts[i];
             }
         }    
-        return null;
+        CheckingAccount account = bank.getAuthorizedCheckingAccount("123", "abc");
+            if (account != null) {
+                assertNotNull(account);
+                assertTrue(account.belongsTo("123"));
+                assertFalse(account.matchAccount("123", "abc"));
+                assertTrue(account.matchAccount("123", PasswordUtils.getPasswordHash("abc")));
+                assertEquals(new BigDecimal("100"), account.getBalance());
+            } else {
+                    System.out.println("No authorized account found for the provided credentials.");
+        }
+
     }
 
     public boolean hasAccountFor(String ssn) {
