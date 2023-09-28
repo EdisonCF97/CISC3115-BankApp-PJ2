@@ -35,7 +35,7 @@ public class BankApp{
 
                 CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
 
-                appLoop(account);
+                appLoop(account, scanner);
 
             }
 
@@ -50,7 +50,7 @@ public class BankApp{
         
         public static void appLoop(CheckingAccount account) {
             Scanner scanner = new Scanne(System.in);
-            int option;
+            int option; 
             
             
         while (true) {
