@@ -48,8 +48,7 @@ public class BankApp{
             System.out.println("0. Exit");
         }
         
-        public static void appLoop(CheckingAccount account) {
-            Scanner scanner = new Scanne(System.in);
+        public static void appLoop(CheckingAccount account, Scanner scanner) {
             int option; 
             
             
