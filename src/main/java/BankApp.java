@@ -3,9 +3,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
-import main.java.Bank;
-
-
 public class BankApp{
 
     public static void main(String[] args) {
@@ -52,6 +49,7 @@ public class BankApp{
         }
         
         public static void appLoop(CheckingAccount account) {
+            Scanner scanner = new Scanne(System.in);
             int option;
             
             
@@ -66,9 +64,8 @@ public class BankApp{
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
-                    Double withdrawAmount = scanner.nextDouble();
-                    BigDecimal withdrawAmountBD = BigDecimal.valueOf(withdrawAmount);
-                    if (account.withdraw(withdrawAmountBD)) {
+                    BigDecimal withdrawAmount = BigDecimal.valueOf(withdrawAmount);
+                    if (account.withdraw(withdrawAmount)) {
                         System.out.println("Withdraw success.");
                     } else {
                         System.out.println("Insufficient funds.");
