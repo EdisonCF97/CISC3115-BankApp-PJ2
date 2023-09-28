@@ -21,7 +21,7 @@ public class BankApp{
         }
 
         public static void displayMenu(CheckingAccount account){           
-            System.out.printf("Account No. ",account.getAccountNo());
+            System.out.println("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
@@ -38,7 +38,7 @@ public class BankApp{
     
             switch (option) {
                 case 1:
-                System.out.printf("The balance is %s\n ",account.getBalanceAsString());
+                System.out.printf("The balance is %s\n",account.getBalanceAsString());
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
