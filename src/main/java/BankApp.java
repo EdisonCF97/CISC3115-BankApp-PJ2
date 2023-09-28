@@ -64,7 +64,7 @@ public class BankApp{
                 break;
                 case 2:
                     System.out.print("Enter dollar amount to withdraw: $");
-                    BigDecimal withdrawAmount = BigDecimal.valueOf(withdrawAmount);
+                    BigDecimal withdrawAmount = scanner.nextBigDecimal();
                     if (account.withdraw(withdrawAmount)) {
                         System.out.println("Withdraw success.");
                     } else {
