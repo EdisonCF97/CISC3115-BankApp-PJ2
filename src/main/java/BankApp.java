@@ -6,42 +6,22 @@ import java.util.Scanner;
 public class BankApp{
 
     public static void main(String[] args) {
-           
-            /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
-            
-            BankApp.displayMenu(account);
-       
-    }
-    
-        public static void displayMenu(CheckingAccount account) {
+            Bank bank = loadBankAccounts();
             Scanner scanner = new Scanner(System.in);
+   
             System.out.print("Enter SSN: ");
             String ssn = scanner.nextLine();
             System.out.print("Enter password: ");
             String pw = scanner.nextLine();
-            int option;*/
-            Bank bank = loadBankAccounts();
-            Scanner scanner = new Scanner(System.in);
 
+            CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
 
+            appLoop(account, scanner);
 
-                
-        /*CheckingAccount account = new CheckingAccount("6637862074333514921", "pwHashHere", 123456, BigDecimal.valueOf(5000.00));
-  */    
-                System.out.print("Enter SSN: ");
-                String ssn = scanner.nextLine();
-                System.out.print("Enter password: ");
-                String pw = scanner.nextLine();
+        }
 
-                CheckingAccount account = bank.getAuthorizedCheckingAccount(ssn, pw);
-
-                appLoop(account, scanner);
-
-            }
-
-                
         public static void displayMenu(CheckingAccount account){           
-            System.out.println("Account No. " + account.getAccountNo());
+            System.out.printf("Account No. " + account.getAccountNo());
             System.out.println("1. Check balance");
             System.out.println("2. Withdraw");
             System.out.println("3. Deposit");
@@ -50,8 +30,7 @@ public class BankApp{
         
         public static void appLoop(CheckingAccount account, Scanner scanner) {
             int option; 
-            
-            
+                        
         while (true) {
             displayMenu(account);
             System.out.print("Enter Option: ");
